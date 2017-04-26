@@ -1,5 +1,6 @@
 {
   "name": "ionic-hello-world",
+  "version": "0.0.0",
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
   "private": true,
@@ -33,13 +34,13 @@
     "typescript": "~2.2.1"
   },
   "cordovaPlugins": [
-    "cordova-plugin-whitelist",
-    "cordova-plugin-statusbar",
-    "cordova-plugin-console",
     "cordova-plugin-device",
+    "cordova-plugin-console",
+    "cordova-plugin-whitelist",
     "cordova-plugin-splashscreen",
+    "cordova-plugin-statusbar",
     "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [],
-  "description": "Aula: An Ionic project"
+  "description": "Aula2: An Ionic project"
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController, NavParams } from 'ionic-angular'
 import { conta } from '../conta/conta'
+//import { DAOagenda } from '../../app/dao/DAOagenda'
 
 @Component({
   selector: 'agenda',
@@ -8,8 +9,11 @@ import { conta } from '../conta/conta'
 })
 
 export class agenda {
+  dao:any; 
   items: any[];
     constructor(public modalCtrl: ModalController) {
+      //this.dao = new DAOagenda('');
+      //this.items = this.dao.getList();
       this.insert();
       console.log(this.items)
     }
@@ -33,6 +37,13 @@ export class agenda {
         descricao: "spiga3"
       }
     ];
+  }
+  editar(data) {
+    let profileModal = this.modalCtrl.create(conta, {parametro: data});
+      profileModal.onDidDismiss((data) => {
+        this.items.push(data)
+      })
+      profileModal.present();
   }
 }
 
