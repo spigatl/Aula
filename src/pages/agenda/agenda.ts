@@ -21,7 +21,11 @@ export class agenda {
     presentProfileModal() {
       let profileModal = this.modalCtrl.create(conta);
       profileModal.onDidDismiss((data) => {
-        this.items.push(data)
+        if (data == null) {
+          return false
+        } else {
+          this.items.push(data)
+        }
       })
       profileModal.present();
   }
@@ -40,9 +44,6 @@ export class agenda {
   }
   editar(data) {
     let profileModal = this.modalCtrl.create(conta, {parametro: data});
-      profileModal.onDidDismiss((data) => {
-        this.items.push(data)
-      })
       profileModal.present();
   }
 }
